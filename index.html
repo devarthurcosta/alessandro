@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090a09">
+  <meta name="description" content="Consultoria on-line de emagrecimento com Alessandro Cassettari. Treino com consciência, postura e força, adaptado aos seus objetivos e à sua realidade.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alessandro Cassettari | Consultoria on-line">
+  <meta property="og:description" content="Emagrecimento com estratégia, movimento consciente e acompanhamento próximo.">
+  <meta property="og:image" content="img/mentor3.jpeg">
+  <title>Alessandro Cassettari | Consultoria on-line</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090a09;
+      --surface: #111310;
+      --surface-2: #171914;
+      --line: rgba(255,255,255,.1);
+      --text: #f6f6f1;
+      --muted: #a8aaa1;
+      --yellow: #f5cf24;
+      --yellow-2: #ffe66b;
+      --content: 1160px;
+      --radius: 22px;
+      --ease: cubic-bezier(.2,.75,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      background-image: radial-gradient(rgba(255,255,255,.09) .55px, transparent .55px);
+      background-size: 5px 5px;
+      opacity: .07;
+      mask-image: linear-gradient(to bottom, #000, transparent 90%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+    ::selection { color: #101108; background: var(--yellow); }
+    .container { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .section { padding: 112px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--yellow);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 22px; height: 1px; background: currentColor; content: ""; }
+    .section-heading { max-width: 730px; margin-bottom: 46px; }
+    .section-heading h2, .about-copy h2, .closing-copy h2 {
+      margin: 16px 0 16px;
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      font-weight: 750;
+      letter-spacing: -.055em;
+      line-height: 1.02;
+    }
+    .section-heading p, .about-copy > p, .closing-copy > p { max-width: 620px; color: var(--muted); font-size: 1.03rem; }
+    .accent { color: var(--yellow); }
+    .topbar {
+      position: absolute;
+      z-index: 10;
+      inset: 0 0 auto;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,.055);
+      background: rgba(9,10,9,.72);
+      backdrop-filter: blur(14px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: max-content; }
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(245,207,36,.58);
+      border-radius: 13px;
+      background: linear-gradient(145deg, rgba(245,207,36,.2), rgba(245,207,36,.02));
+      color: var(--yellow);
+      font-size: .92rem;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+    .brand-name { display: grid; gap: 1px; font-size: .88rem; font-weight: 750; letter-spacing: -.02em; line-height: 1.2; }
+    .brand-name small { color: var(--muted); font-size: .65rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: #c6c7c1; font-size: .83rem; }
+    .nav-links a:not(.button) { transition: color .2s ease; }
+    .nav-links a:not(.button):hover { color: var(--yellow); }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--yellow);
+      color: #101108;
+      font-size: .88rem;
+      font-weight: 850;
+      letter-spacing: -.01em;
+      box-shadow: 0 8px 28px rgba(245,207,36,.15);
+      transition: transform .25s var(--ease), box-shadow .25s ease, background .25s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--yellow-2); box-shadow: 0 13px 34px rgba(245,207,36,.24); }
+    .button svg { width: 18px; height: 18px; flex: none; }
+    .button-ghost { border-color: var(--line); background: rgba(255,255,255,.035); color: var(--text); box-shadow: none; }
+    .button-ghost:hover { border-color: rgba(245,207,36,.5); background: rgba(245,207,36,.08); box-shadow: none; }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 780px;
+      align-items: center;
+      padding: 140px 0 72px;
+      isolation: isolate;
+    }
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      top: 80px;
+      right: max(-15vw, -180px);
+      width: min(66vw, 820px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,207,36,.12), rgba(245,207,36,.035) 41%, transparent 69%);
+      content: "";
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: clamp(36px, 7vw, 94px); }
+    .hero-copy { position: relative; z-index: 2; padding-bottom: 20px; }
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      padding: 8px 13px;
+      border: 1px solid rgba(245,207,36,.26);
+      border-radius: 999px;
+      background: rgba(245,207,36,.055);
+      color: #e8d56d;
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hero-label span { width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 12px var(--yellow); }
+    h1 {
+      max-width: 690px;
+      margin: 0;
+      font-size: clamp(3.3rem, 6.5vw, 6rem);
+      font-weight: 780;
+      letter-spacing: -.075em;
+      line-height: .96;
+    }
+    h1 .line-light { display: block; margin-top: .13em; color: #c8c9c1; font-weight: 520; }
+    .hero-copy > p { max-width: 525px; margin: 25px 0 30px; color: #b4b5ad; font-size: clamp(1rem, 1.5vw, 1.13rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 28px; color: #898b83; font-size: .78rem; }
+    .hero-note-mark { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(245,207,36,.3); border-radius: 50%; color: var(--yellow); font-size: .82rem; }
+    .hero-visual { position: relative; width: min(100%, 470px); justify-self: center; perspective: 1100px; }
+    .hero-photo-shell {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: .79;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 46% 46% 25px 25px / 36% 36% 25px 25px;
+      background: #1c211c;
+      box-shadow: 0 38px 100px rgba(0,0,0,.48), 0 0 0 12px rgba(255,255,255,.018);
+      transform: rotateY(-7deg) rotateX(2deg);
+      transform-style: preserve-3d;
+      transition: transform .5s var(--ease), box-shadow .5s ease;
+      will-change: transform;
+    }
+    .hero-visual:hover .hero-photo-shell { transform: rotateY(0deg) rotateX(0deg) translateY(-5px); box-shadow: 0 45px 110px rgba(0,0,0,.52), 0 0 0 12px rgba(255,255,255,.018); }
+    .hero-photo-shell::after { position: absolute; inset: 25% 0 0; background: linear-gradient(180deg, transparent 33%, rgba(5,7,5,.84)); content: ""; }
+    .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+    .photo-caption { position: absolute; z-index: 1; right: 25px; bottom: 25px; left: 25px; transform: translateZ(28px); }
+    .photo-caption small { display: block; color: var(--yellow); font-size: .68rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .photo-caption strong { display: block; margin-top: 5px; font-size: 1.4rem; letter-spacing: -.04em; }
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 16px;
+      background: rgba(21,23,19,.88);
+      box-shadow: 0 18px 48px rgba(0,0,0,.32);
+      backdrop-filter: blur(12px);
+      animation: float 5.5s ease-in-out infinite;
+    }
+    .floating-card.one { top: 24%; left: -62px; }
+    .floating-card.two { right: -44px; bottom: 15%; animation-delay: -2.2s; }
+    .float-icon { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 12px; background: rgba(245,207,36,.13); color: var(--yellow); }
+    .float-icon svg { width: 20px; height: 20px; }
+    .float-text { display: grid; font-size: .77rem; font-weight: 780; line-height: 1.25; }
+    .float-text small { margin-top: 3px; color: var(--muted); font-size: .66rem; font-weight: 550; }
+    .hero-orbit { position: absolute; z-index: -1; top: 7%; right: -11%; width: 84%; aspect-ratio: 1; border: 1px solid rgba(245,207,36,.16); border-radius: 50%; transform: rotate(-25deg) scaleY(.58); }
+    .hero-orbit::after { position: absolute; top: 8%; left: 12%; width: 9px; height: 9px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 18px rgba(245,207,36,.8); content: ""; }
+    .hero-scroll { position: absolute; bottom: 27px; left: 50%; display: flex; align-items: center; gap: 10px; color: #74766f; font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; transform: translateX(-50%); }
+    .hero-scroll::before { width: 28px; height: 1px; background: var(--yellow); content: ""; }
+
+    .credentials { border-block: 1px solid var(--line); background: rgba(255,255,255,.018); }
+    .credentials-row { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .credential { display: flex; min-height: 96px; align-items: center; justify-content: center; gap: 13px; padding: 18px; color: #d5d6cf; font-size: .83rem; font-weight: 700; text-align: center; }
+    .credential + .credential { border-left: 1px solid var(--line); }
+    .credential svg { width: 21px; height: 21px; flex: none; color: var(--yellow); }
+
+    .intro-grid { display: grid; grid-template-columns: .82fr 1.18fr; align-items: start; gap: clamp(42px, 8vw, 120px); }
+    .intro-title { position: sticky; top: 120px; }
+    .intro-title h2 { max-width: 420px; margin: 17px 0; font-size: clamp(2.3rem, 4.5vw, 4.1rem); letter-spacing: -.06em; line-height: 1.02; }
+    .intro-title p { max-width: 350px; color: var(--muted); }
+    .principles { display: grid; gap: 14px; }
+    .principle {
+      position: relative;
+      display: grid;
+      grid-template-columns: 68px 1fr auto;
+      align-items: center;
+      gap: 21px;
+      min-height: 135px;
+      padding: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(120deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      transform-style: preserve-3d;
+      transition: border-color .3s ease, background .3s ease, transform .3s var(--ease);
+    }
+    .principle:hover { border-color: rgba(245,207,36,.35); background: linear-gradient(120deg, rgba(245,207,36,.075), rgba(255,255,255,.012)); transform: perspective(900px) rotateY(-2deg) translateX(4px); }
+    .principle::after { position: absolute; right: -40px; bottom: -80px; width: 180px; height: 180px; border: 1px solid rgba(245,207,36,.09); border-radius: 50%; box-shadow: 0 0 0 22px rgba(245,207,36,.018), 0 0 0 46px rgba(245,207,36,.012); content: ""; }
+    .principle-number { color: var(--yellow); font-size: .8rem; font-weight: 850; letter-spacing: .1em; }
+    .principle-copy h3 { margin: 0 0 5px; font-size: 1.28rem; letter-spacing: -.03em; }
+    .principle-copy p { max-width: 430px; margin: 0; color: var(--muted); font-size: .89rem; }
+    .principle-symbol { width: 28px; height: 28px; color: rgba(245,207,36,.8); }
+
+    .method-section { position: relative; overflow: hidden; border-block: 1px solid var(--line); background: linear-gradient(180deg, #0d0f0c, #090a09); }
+    .method-section::before { position: absolute; top: -250px; right: -200px; width: 580px; height: 580px; border-radius: 50%; background: radial-gradient(circle, rgba(245,207,36,.08), transparent 68%); content: ""; pointer-events: none; }
+    .method-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 48px; }
+    .method-head .section-heading { margin: 0; }
+    .method-head .section-heading h2 { max-width: 620px; }
+    .method-stamp { display: grid; width: 110px; height: 110px; flex: none; place-items: center; border: 1px solid rgba(245,207,36,.42); border-radius: 50%; color: var(--yellow); font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-align: center; text-transform: uppercase; transform: rotate(11deg); }
+    .method-stamp span { max-width: 70px; }
+    .method-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; perspective: 1200px; }
+    .method-card {
+      position: relative;
+      min-height: 310px;
+      padding: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(145deg, #171914, #10120f 72%);
+      transform-style: preserve-3d;
+      transition: transform .35s var(--ease), border-color .35s ease, box-shadow .35s ease;
+    }
+    .method-card:hover { border-color: rgba(245,207,36,.43); box-shadow: 0 20px 50px rgba(0,0,0,.25); transform: translateY(-7px) rotateX(2deg); }
+    .method-card::before { position: absolute; right: -50px; bottom: -85px; width: 220px; height: 220px; border: 1px solid rgba(245,207,36,.12); border-radius: 50%; box-shadow: 0 0 0 20px rgba(245,207,36,.025), 0 0 0 42px rgba(245,207,36,.018); content: ""; }
+    .method-index { color: #74766d; font-size: .72rem; font-weight: 800; letter-spacing: .14em; }
+    .method-icon { display: grid; width: 54px; height: 54px; margin: 33px 0 20px; place-items: center; border: 1px solid rgba(245,207,36,.25); border-radius: 17px; background: rgba(245,207,36,.09); color: var(--yellow); transform: translateZ(28px); }
+    .method-icon svg { width: 26px; height: 26px; }
+    .method-card h3 { margin: 0 0 10px; font-size: 1.5rem; letter-spacing: -.045em; transform: translateZ(15px); }
+    .method-card p { max-width: 285px; margin: 0; color: var(--muted); font-size: .9rem; transform: translateZ(10px); }
+    .method-footer { display: flex; align-items: center; gap: 14px; margin-top: 32px; color: #c6c7bf; font-size: .84rem; }
+    .method-footer::before { width: 28px; height: 1px; background: var(--yellow); content: ""; }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 50px; }
+    .step { position: relative; padding: 0 28px 0 0; }
+    .step + .step { padding-left: 28px; border-left: 1px solid var(--line); }
+    .step-number { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid rgba(245,207,36,.45); border-radius: 50%; color: var(--yellow); font-size: .8rem; font-weight: 850; }
+    .step h3 { margin: 20px 0 8px; font-size: 1.14rem; letter-spacing: -.025em; }
+    .step p { max-width: 300px; margin: 0; color: var(--muted); font-size: .88rem; }
+    .step-connector { position: absolute; top: 22px; right: 0; width: calc(100% - 88px); height: 1px; background: linear-gradient(90deg, rgba(245,207,36,.55), transparent); transform: translateX(45px); }
+    .step:last-child .step-connector { display: none; }
+
+    .proof-section { background: #0d0f0c; }
+    .proof-head { display: flex; align-items: end; justify-content: space-between; gap: 25px; }
+    .proof-head .section-heading { margin-bottom: 36px; }
+    .proof-head .section-heading h2 { max-width: 620px; }
+    .proof-caption { max-width: 245px; margin: 0 0 42px; color: var(--muted); font-size: .82rem; }
+    .proof-grid { display: grid; grid-template-columns: repeat(12, 1fr); align-items: stretch; gap: 15px; }
+    .proof-card { display: flex; min-width: 0; min-height: 255px; align-items: center; justify-content: center; padding: 15px; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: #090a0a; }
+    .proof-card img { width: 100%; max-height: 390px; object-fit: contain; border-radius: 10px; }
+    .proof-card:nth-child(1) { grid-column: span 7; }
+    .proof-card:nth-child(2) { grid-column: span 5; }
+    .proof-card:nth-child(3) { grid-column: span 4; }
+    .proof-card:nth-child(4) { grid-column: span 4; }
+    .proof-card:nth-child(5) { grid-column: span 4; }
+    .proof-card:nth-child(3) img { max-height: 430px; }
+    .proof-footnote { margin: 18px 0 0; color: #777a71; font-size: .72rem; }
+
+    .about-grid { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: clamp(45px, 8vw, 108px); }
+    .about-photos { position: relative; min-height: 555px; perspective: 1000px; }
+    .about-photo { position: absolute; overflow: hidden; border: 1px solid rgba(255,255,255,.15); border-radius: 24px; background: #1b1b18; box-shadow: 0 25px 65px rgba(0,0,0,.4); transition: transform .45s var(--ease); }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo.main { top: 0; left: 4%; width: 67%; height: 450px; transform: rotateY(7deg) rotateZ(-3deg); }
+    .about-photo.small { right: 0; bottom: 0; width: 51%; height: 324px; border: 6px solid var(--bg); transform: rotateY(-9deg) rotateZ(4deg); }
+    .about-photos:hover .about-photo.main { transform: rotateY(0) rotateZ(-1deg) translateY(-4px); }
+    .about-photos:hover .about-photo.small { transform: rotateY(0) rotateZ(2deg) translateY(-4px); }
+    .about-tag { position: absolute; right: 4%; top: 25px; z-index: 2; display: grid; width: 87px; height: 87px; place-items: center; border-radius: 50%; background: var(--yellow); color: #11120e; font-size: .62rem; font-weight: 900; letter-spacing: .08em; text-align: center; text-transform: uppercase; transform: rotate(12deg); }
+    .about-copy h2 { max-width: 550px; }
+    .about-copy > p { margin: 0 0 17px; }
+    .about-quote { margin: 30px 0; padding: 18px 0 18px 20px; border-left: 2px solid var(--yellow); color: #ecece5; font-size: 1rem; font-weight: 650; letter-spacing: -.02em; }
+    .credential-list { display: grid; gap: 12px; margin: 26px 0 31px; padding: 0; list-style: none; }
+    .credential-list li { display: flex; align-items: flex-start; gap: 11px; color: #d0d1c9; font-size: .88rem; }
+    .credential-list svg { width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--yellow); }
+
+    .closing { position: relative; overflow: hidden; padding: 92px 0; border-block: 1px solid rgba(245,207,36,.24); background: linear-gradient(110deg, rgba(245,207,36,.1), rgba(245,207,36,.025) 54%, transparent); }
+    .closing::after { position: absolute; top: -220px; right: -100px; width: 600px; height: 600px; border: 1px solid rgba(245,207,36,.14); border-radius: 50%; box-shadow: 0 0 0 32px rgba(245,207,36,.025), 0 0 0 70px rgba(245,207,36,.018); content: ""; pointer-events: none; }
+    .closing-grid { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 42px; }
+    .closing-copy { max-width: 720px; }
+    .closing-copy h2 { max-width: 700px; }
+    .closing-copy > p { max-width: 570px; margin-bottom: 0; }
+    .closing-action { min-width: max-content; }
+    .closing-action small { display: block; margin-top: 12px; color: #9d9f96; font-size: .7rem; text-align: center; }
+
+    .faq-grid { display: grid; grid-template-columns: .76fr 1.24fr; gap: clamp(40px, 8vw, 110px); }
+    .faq-intro h2 { margin: 15px 0; font-size: clamp(2.2rem, 4vw, 3.5rem); letter-spacing: -.06em; line-height: 1.02; }
+    .faq-intro p { max-width: 330px; color: var(--muted); }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 0; border: 0; background: none; color: var(--text); cursor: pointer; font-size: .98rem; font-weight: 700; text-align: left; }
+    .faq-plus { display: grid; width: 28px; height: 28px; flex: none; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--yellow); transition: transform .25s ease, background .25s ease; }
+    .faq-item[open] .faq-plus { background: rgba(245,207,36,.1); transform: rotate(45deg); }
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .28s ease; }
+    .faq-item[open] .faq-answer { grid-template-rows: 1fr; }
+    .faq-answer > div { overflow: hidden; }
+    .faq-answer p { max-width: 650px; margin: 0; padding: 0 42px 21px 0; color: var(--muted); font-size: .88rem; }
+
+    footer { padding: 33px 0 95px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .footer-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; color: #b6b8af; font-size: .78rem; }
+    .footer-contact a:hover { color: var(--yellow); }
+    .copyright { color: #73756d; font-size: .72rem; }
+    .mobile-cta { display: none; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-9px) rotate(1deg); } }
+    @keyframes orbit { to { transform: rotate(335deg) scaleY(.58); } }
+
+    @media (max-width: 900px) {
+      .section { padding: 88px 0; }
+      .hero { min-height: unset; padding-top: 135px; }
+      .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 28px; }
+      .hero-visual { width: 100%; }
+      .floating-card.one { left: -28px; }
+      .floating-card.two { right: -22px; }
+      .intro-grid, .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .intro-title { position: static; }
+      .intro-title h2 { max-width: 650px; }
+      .intro-title p { max-width: 550px; }
+      .about-photos { width: min(560px, 100%); min-height: 510px; margin-inline: auto; }
+      .about-copy { max-width: 720px; }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 70px; }
+      .container { width: min(var(--content), calc(100% - 36px)); }
+      .section { padding: 72px 0; }
+      .topbar { position: absolute; padding: 13px 0; }
+      .brand-mark { width: 38px; height: 38px; border-radius: 12px; }
+      .brand-name { font-size: .82rem; }
+      .brand-name small { font-size: .59rem; }
+      .nav { gap: 12px; }
+      .nav-links { gap: 0; }
+      .nav-links > a:not(.button) { display: none; }
+      .nav-links .button { min-height: 42px; padding-inline: 15px; font-size: .75rem; }
+      .hero { padding: 111px 0 64px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero-copy { padding: 0; }
+      h1 { max-width: 540px; font-size: clamp(3rem, 14.8vw, 5.2rem); }
+      .hero-copy > p { margin: 20px 0 24px; font-size: .98rem; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .hero-actions .button { width: 100%; }
+      .hero-note { margin-top: 19px; font-size: .72rem; }
+      .hero-visual { width: min(84%, 360px); }
+      .hero-photo-shell { transform: none; border-radius: 45% 45% 22px 22px / 32% 32% 22px 22px; }
+      .floating-card { gap: 9px; padding: 10px 12px; border-radius: 13px; }
+      .floating-card.one { top: 22%; left: -34px; }
+      .floating-card.two { right: -31px; bottom: 15%; }
+      .float-icon { width: 32px; height: 32px; border-radius: 10px; }
+      .float-text { font-size: .69rem; }
+      .float-text small { font-size: .59rem; }
+      .hero-scroll { display: none; }
+      .credentials-row { grid-template-columns: 1fr; padding: 10px 0; }
+      .credential { min-height: 61px; justify-content: flex-start; padding: 12px 4px; text-align: left; }
+      .credential + .credential { border-top: 1px solid var(--line); border-left: 0; }
+      .section-heading { margin-bottom: 32px; }
+      .section-heading h2, .about-copy h2, .closing-copy h2 { font-size: clamp(2.25rem, 10vw, 3.35rem); }
+      .section-heading p, .about-copy > p, .closing-copy > p { font-size: .94rem; }
+      .intro-grid { gap: 32px; }
+      .principle { grid-template-columns: 43px 1fr; gap: 12px; min-height: 126px; padding: 18px; }
+      .principle-symbol { display: none; }
+      .principle-copy h3 { font-size: 1.16rem; }
+      .principle-copy p { font-size: .82rem; }
+      .method-head { align-items: flex-start; }
+      .method-stamp { width: 70px; height: 70px; font-size: .5rem; }
+      .method-stamp span { max-width: 50px; }
+      .method-cards { grid-template-columns: 1fr; gap: 12px; }
+      .method-card { min-height: 260px; padding: 24px; }
+      .method-icon { margin: 22px 0 17px; }
+      .method-card p { max-width: 100%; }
+      .method-footer { margin-top: 23px; }
+      .steps { grid-template-columns: 1fr; gap: 25px; margin-top: 37px; }
+      .step, .step + .step { display: grid; grid-template-columns: 48px 1fr; gap: 0 14px; padding: 0; border: 0; }
+      .step-number { grid-row: span 2; }
+      .step h3 { margin: 2px 0 5px; }
+      .step p { max-width: none; }
+      .step-connector { display: none; }
+      .proof-head { display: block; }
+      .proof-head .section-heading { margin-bottom: 12px; }
+      .proof-caption { max-width: 100%; margin: 0 0 25px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .proof-card { grid-column: auto !important; min-height: 190px; padding: 9px; border-radius: 15px; }
+      .proof-card img { max-height: 280px; }
+      .proof-card:nth-child(3) { grid-row: span 2; }
+      .proof-card:nth-child(3) img { max-height: 390px; }
+      .proof-footnote { font-size: .68rem; }
+      .about-grid { gap: 37px; }
+      .about-photos { min-height: 390px; width: 100%; }
+      .about-photo.main { left: 0; width: 70%; height: 320px; border-radius: 19px; }
+      .about-photo.small { right: 0; width: 53%; height: 230px; border-width: 4px; border-radius: 18px; }
+      .about-tag { right: 1%; top: 14px; width: 71px; height: 71px; font-size: .52rem; }
+      .about-quote { margin: 24px 0; font-size: .94rem; }
+      .credential-list { margin: 22px 0 27px; }
+      .credential-list li { font-size: .83rem; }
+      .closing { padding: 70px 0; }
+      .closing-grid { display: grid; gap: 26px; }
+      .closing-action { min-width: 0; }
+      .closing-action .button { width: 100%; }
+      .closing-action small { text-align: left; }
+      .faq-grid { grid-template-columns: 1fr; gap: 30px; }
+      .faq-intro h2 { max-width: 480px; font-size: 2.5rem; }
+      .faq-intro p { max-width: 500px; }
+      .faq-question { padding: 18px 0; font-size: .9rem; }
+      .faq-answer p { font-size: .82rem; }
+      footer { padding-bottom: calc(94px + env(safe-area-inset-bottom)); }
+      .footer-row { align-items: flex-start; flex-direction: column; gap: 17px; }
+      .footer-contact { flex-direction: column; align-items: flex-start; gap: 9px; }
+      .mobile-cta {
+        position: fixed;
+        z-index: 20;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255,255,255,.1);
+        background: rgba(9,10,9,.9);
+        backdrop-filter: blur(16px);
+      }
+      .mobile-cta .button { width: 100%; min-height: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Alessandro Cassettari, início">
+        <span class="brand-mark" aria-hidden="true">AC</span>
+        <span class="brand-name">Alessandro Cassettari<small>Educação Física</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#metodo">Método</a>
+        <a href="#sobre">Sobre</a>
+        <a class="button" href="https://wa.me/5561999590927?text=Ol%C3%A1%2C%20Alessandro!%20Quero%20saber%20mais%20sobre%20a%20consultoria%20on-line%20de%20emagrecimento." target="_blank" rel="noopener noreferrer">Falar no WhatsApp <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <div class="hero-label"><span></span> Consultoria on-line de emagrecimento</div>
+          <h1>Treine com propósito.<span class="line-light">Evolua no seu ritmo.</span></h1>
+          <p>Um caminho de emagrecimento construído com exercício consciente, estratégia e acompanhamento próximo — respeitando seu corpo, sua rotina e seus objetivos.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/5561999590927?text=Ol%C3%A1%2C%20Alessandro!%20Quero%20conversar%20sobre%20a%20consultoria%20on-line." target="_blank" rel="noopener noreferrer">Quero conversar sobre a consultoria <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="button button-ghost" href="#metodo">Conheça a abordagem</a>
+          </div>
+          <div class="hero-note"><span class="hero-note-mark" aria-hidden="true">✓</span><span>Treino pensado para a sua realidade, com movimento e consciência.</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Alessandro Cassettari em uma academia">
+          <div class="hero-orbit" aria-hidden="true"></div>
+          <div class="hero-photo-shell">
+            <img class="hero-photo" src="img/mentor3.jpeg" alt="Alessandro Cassettari, profissional de Educação Física, em uma academia" fetchpriority="high" decoding="async">
+            <div class="photo-caption"><small>Postura · Conexão · Força</small><strong>Movimento com intenção.</strong></div>
+          </div>
+          <div class="floating-card one" aria-hidden="true">
+            <span class="float-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 19 6v5.5c0 4.7-3 7.8-7 9-4-1.2-7-4.3-7-9V6l7-2.5Z" stroke="currentColor" stroke-width="1.6"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="float-text">Treino consciente<small>Do seu jeito, com estratégia</small></span>
+          </div>
+          <div class="floating-card two" aria-hidden="true">
+            <span class="float-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17.5 9 12l3 3 7-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 7h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="float-text">Evolução consistente<small>Um passo de cada vez</small></span>
+          </div>
+        </div>
+      </div>
+      <a class="hero-scroll" href="#abordagem">Role para conhecer</a>
+    </section>
+
+    <section class="credentials" aria-label="Formação e áreas de atuação">
+      <div class="credentials-row container">
+        <div class="credential"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19.5V6.8c0-.8.7-1.5 1.5-1.5h13c.8 0 1.5.7 1.5 1.5v12.7M8 5.3V3.5m8 1.8V3.5M4 10h16m-11 4h6m-6 3h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Graduado em Educação Física</div>
+        <div class="credential"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19V9m7 10V5m7 14v-7M3 19h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Especialista em Biomecânica e Hipertrofia</div>
+        <div class="credential"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7.5-4.3-7.5-10.2A4.3 4.3 0 0 1 12 8.3a4.3 4.3 0 0 1 7.5 2.5C19.5 16.7 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 12h2l1.1-2.2 1.7 4.4 1.2-2.2h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Correção postural e reabilitação de lesões</div>
+      </div>
+    </section>
+
+    <section class="section" id="abordagem">
+      <div class="intro-grid container">
+        <div class="intro-title reveal">
+          <span class="eyebrow">Uma abordagem com sentido</span>
+          <h2>Seu treino pode ser <span class="accent">mais do que repetir movimentos.</span></h2>
+          <p>Entender o que você está fazendo muda a forma de treinar. Cada exercício precisa considerar sua estrutura, suas necessidades e o objetivo que você quer alcançar.</p>
+        </div>
+        <div class="principles">
+          <article class="principle reveal">
+            <span class="principle-number">01 / BASE</span>
+            <div class="principle-copy"><h3>Movimento de qualidade</h3><p>Mais atenção à execução e ao que seu corpo consegue fazer hoje, com progressão bem orientada.</p></div>
+            <svg class="principle-symbol" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18h16M7 18V9m10 9V6M4 9h6m4-3h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </article>
+          <article class="principle reveal">
+            <span class="principle-number">02 / AJUSTE</span>
+            <div class="principle-copy"><h3>Treino para a sua realidade</h3><p>Uma proposta que leva em conta seus objetivos, sua rotina e possíveis limitações de movimento.</p></div>
+            <svg class="principle-symbol" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M4.5 7.5h15m-12 9h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="16.5" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </article>
+          <article class="principle reveal">
+            <span class="principle-number">03 / CONSTÂNCIA</span>
+            <div class="principle-copy"><h3>Evolução acompanhada</h3><p>Orientação para construir consistência, ajustar o percurso e reconhecer cada avanço.</p></div>
+            <svg class="principle-symbol" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18.5 9 13l3 3 8-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="metodo">
+      <div class="container">
+        <div class="method-head">
+          <div class="section-heading reveal">
+            <span class="eyebrow">A tríade do treino</span>
+            <h2>Postura, conexão e força: <span class="accent">três pilares para treinar melhor.</span></h2>
+            <p>Uma maneira integrada de desenvolver o movimento e trabalhar em direção a uma rotina de treino mais consciente e sustentável.</p>
+          </div>
+          <div class="method-stamp" aria-hidden="true"><span>Treino com propósito</span></div>
+        </div>
+        <div class="method-cards">
+          <article class="method-card reveal">
+            <span class="method-index">PILAR 01</span>
+            <span class="method-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5v17M7 6.5c1.2 1.1 1.8 2.9 1.8 5.5S8.2 16.4 7 17.5m10-11c-1.2 1.1-1.8 2.9-1.8 5.5s.6 5.4 1.8 6.5M5 9h2m10 0h2M5 15h2m10 0h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h3>Postura</h3>
+            <p>Consciência corporal, alinhamento e adaptações que ajudam a encontrar uma execução mais confortável e funcional.</p>
+          </article>
+          <article class="method-card reveal">
+            <span class="method-index">PILAR 02</span>
+            <span class="method-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s-7-4.1-7-9.4A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7 2.6C19 15.9 12 20 12 20Z" stroke="currentColor" stroke-width="1.6"/><path d="M8.2 12h2l1.1-2 1.6 4 1.2-2h1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Conexão</h3>
+            <p>Perceber o movimento e manter atenção no exercício para que a série tenha intenção, não apenas repetição.</p>
+          </article>
+          <article class="method-card reveal">
+            <span class="method-index">PILAR 03</span>
+            <span class="method-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 9v6m3-8v10m8-10v10m3-8v6M8 12h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M3.5 10v4m17-4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Força</h3>
+            <p>Desenvolver capacidade e confiança com progressão adequada, respeitando seu momento e seus limites.</p>
+          </article>
+        </div>
+        <div class="method-footer">Treinar forte também é saber como e por que você se movimenta.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Como começa</span>
+          <h2>Um plano que começa <span class="accent">com você.</span></h2>
+          <p>O acompanhamento é construído a partir de uma conversa e de uma compreensão real dos seus objetivos.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal"><span class="step-number">01</span><div><h3>Conversa inicial</h3><p>Você conta seus objetivos, rotina, experiência com treino e o que gostaria de mudar.</p></div><span class="step-connector" aria-hidden="true"></span></article>
+          <article class="step reveal"><span class="step-number">02</span><div><h3>Direcionamento</h3><p>As orientações de exercício são pensadas considerando seu contexto e suas possibilidades.</p></div><span class="step-connector" aria-hidden="true"></span></article>
+          <article class="step reveal"><span class="step-number">03</span><div><h3>Acompanhamento</h3><p>Você conversa com o profissional para tirar dúvidas e acompanhar o desenvolvimento do plano.</p></div><span class="step-connector" aria-hidden="true"></span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof-section" id="relatos">
+      <div class="container">
+        <div class="proof-head">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Relatos de alunos</span>
+            <h2>Pequenas mudanças também contam. <span class="accent">E merecem ser celebradas.</span></h2>
+          </div>
+          <p class="proof-caption">Mensagens compartilhadas por alunos sobre suas experiências e evolução no treino.</p>
+        </div>
+        <div class="proof-grid">
+          <figure class="proof-card reveal"><img src="img/feedback1%20(1).jpeg" alt="Relato de aluno sobre perda de peso e ganho de massa" loading="lazy" decoding="async"></figure>
+          <figure class="proof-card reveal"><img src="img/feedback1%20(2).jpeg" alt="Mensagem de aluna sobre evolução e mudanças percebidas no treino" loading="lazy" decoding="async"></figure>
+          <figure class="proof-card reveal"><img src="img/feedback1%20(3).jpeg" alt="Relato de aluna sobre melhora do movimento, força e ganho de massa" loading="lazy" decoding="async"></figure>
+          <figure class="proof-card reveal"><img src="img/feedback1%20(4).jpeg" alt="Mensagem de aluna celebrando a perda de três quilos" loading="lazy" decoding="async"></figure>
+          <figure class="proof-card reveal"><img src="img/feedback1%20(5).jpeg" alt="Relato de aluna sobre resultados positivos e evolução" loading="lazy" decoding="async"></figure>
+        </div>
+        <p class="proof-footnote">Os relatos são individuais. Resultados variam conforme o contexto, a rotina e a resposta de cada pessoa.</p>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="about-grid container">
+        <div class="about-photos reveal" aria-label="Fotos de Alessandro Cassettari">
+          <figure class="about-photo main"><img src="img/mentor1.jpeg" alt="Alessandro Cassettari em retrato profissional" loading="lazy" decoding="async"></figure>
+          <figure class="about-photo small"><img src="img/mentor2.jpeg" alt="Alessandro Cassettari em uma segunda foto profissional" loading="lazy" decoding="async"></figure>
+          <span class="about-tag" aria-hidden="true">Ciência<br>e movimento</span>
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">Quem vai te acompanhar</span>
+          <h2>Prazer, sou <span class="accent">Alessandro.</span></h2>
+          <p>Minha aproximação com a Educação Física começou pela afinidade com o esporte e pela prática da musculação. Com o tempo, percebi que treinar bem também significa entender o movimento e como o corpo responde a cada exercício.</p>
+          <p>Foi esse interesse que me levou a aprofundar meus estudos em Biomecânica e Cinesiologia. Ao acompanhar pessoas com diferentes estruturas, necessidades e queixas, também busquei formação em correção postural e reabilitação de lesões.</p>
+          <blockquote class="about-quote">“Um treino forte pode ser feito com consciência, qualidade e respeito ao seu corpo.”</blockquote>
+          <ul class="credential-list">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Graduado em Educação Física</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Especialista em Biomecânica aplicada ao exercício e Hipertrofia</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Especialista em Correção Postural e Reabilitação de Lesões</li>
+          </ul>
+          <a class="button" href="https://wa.me/5561999590927?text=Ol%C3%A1%2C%20Alessandro!%20Gostaria%20de%20conhecer%20seu%20acompanhamento%20on-line." target="_blank" rel="noopener noreferrer">Conhecer a consultoria <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contato">
+      <div class="closing-grid container">
+        <div class="closing-copy reveal">
+          <span class="eyebrow">Seu próximo passo</span>
+          <h2>Quer descobrir se a consultoria combina com <span class="accent">o seu momento?</span></h2>
+          <p>Me conte o que você busca. Vamos conversar sobre seus objetivos e entender juntos qual pode ser o melhor caminho para começar.</p>
+        </div>
+        <div class="closing-action reveal">
+          <a class="button" href="https://wa.me/5561999590927?text=Ol%C3%A1%2C%20Alessandro!%20Tenho%20interesse%20na%20consultoria%20on-line%20de%20emagrecimento.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.7a7.8 7.8 0 0 1-11.5 6.9L4 20l1.4-4.1A7.8 7.8 0 1 1 20 11.7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 8.5c.2-.4.4-.4.7-.4h.4c.1 0 .3 0 .4.3l.7 1.6c.1.2.1.4 0 .5l-.5.6c-.2.2-.2.3 0 .5.5.8 1.2 1.4 2 1.8.2.1.3.1.5-.1l.6-.7c.2-.2.3-.2.6-.1l1.5.7c.2.1.3.2.3.4 0 .3-.2 1-.6 1.3-.4.4-.9.6-1.5.5-.5-.1-1.2-.3-2.1-.7-1.2-.5-2.2-1.5-2.8-2.2-.6-.8-1-1.6-1.1-2.2-.1-.6.1-1.2.4-1.6.2-.2.4-.2.5-.2Z" fill="currentColor"/></svg>Conversar pelo WhatsApp <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <small>WhatsApp · (61) 99959-0927</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="faq-grid container">
+        <div class="faq-intro reveal"><span class="eyebrow">Dúvidas comuns</span><h2>Antes de começar, <span class="accent">vamos esclarecer.</span></h2><p>Se a sua pergunta não estiver aqui, pode me chamar diretamente no WhatsApp.</p></div>
+        <div class="faq-list reveal">
+          <details class="faq-item"><summary class="faq-question">Como funciona a consultoria on-line?<span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><div><p>Começamos com uma conversa para entender seus objetivos, rotina e experiência. A partir daí, o acompanhamento é direcionado às suas necessidades e acontece on-line, com espaço para dúvidas e ajustes.</p></div></div></details>
+          <details class="faq-item"><summary class="faq-question">Preciso já treinar ou ter experiência?<span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><div><p>Não. A conversa inicial ajuda a entender seu ponto de partida e a pensar em orientações compatíveis com sua experiência e suas possibilidades atuais.</p></div></div></details>
+          <details class="faq-item"><summary class="faq-question">A consultoria garante quantos quilos vou perder?<span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><div><p>Não há promessa de resultado ou prazo. A evolução é individual e depende de diversos fatores. A proposta é oferecer acompanhamento de exercício com estratégia, qualidade de movimento e consistência.</p></div></div></details>
+          <details class="faq-item"><summary class="faq-question">A consultoria inclui dieta ou plano alimentar?<span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><div><p>O foco deste acompanhamento é exercício físico e orientação de treino. Para avaliação nutricional e plano alimentar, procure um nutricionista.</p></div></div></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row container">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-mark" aria-hidden="true">AC</span>
+        <span class="brand-name">Alessandro Cassettari<small>Educação Física</small></span>
+      </a>
+      <div class="footer-contact"><a href="mailto:alessandrocassettari@gmail.com">alessandrocassettari@gmail.com</a><a href="https://wa.me/5561999590927" target="_blank" rel="noopener noreferrer">(61) 99959-0927</a></div>
+      <span class="copyright">© <span id="year">2026</span> Alessandro Cassettari</span>
+    </div>
+  </footer>
+
+  <div class="mobile-cta"><a class="button" href="https://wa.me/5561999590927?text=Ol%C3%A1%2C%20Alessandro!%20Quero%20conversar%20sobre%20a%20consultoria%20on-line." target="_blank" rel="noopener noreferrer">Falar com Alessandro no WhatsApp <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+
+  <script>
+    (() => {
+      const year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach((item) => {
+        item.addEventListener('toggle', () => {
+          if (item.open) items.forEach((other) => { if (other !== item) other.open = false; });
+        });
+      });
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealItems = document.querySelectorAll('.reveal');
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              currentObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        revealItems.forEach((item) => observer.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+      }
+    })();
+  </script>
+</body>
+</html>
